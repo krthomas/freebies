@@ -1,9 +1,10 @@
 Freebies::Application.routes.draw do
-  get "pages/home"
+  get "items/new"
 
-  get "pages/add"
+  match '/add', :to => 'items#new'
+  match '/summary',   :to => 'pages#summary'
 
-  get "pages/summary"
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
